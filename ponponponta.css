@@ -26,8 +26,8 @@ li{
 .section-title{
 	border-bottom: 2px solid #dee7ec;
   font-size: 50px;
-  padding-bottom: 15px;
-  margin-bottom: 50px;
+  <--padding-bottom: 15px;
+  <--margin-bottom: 50px;
 }
 .footer{
 	background-color: #2f5167;
