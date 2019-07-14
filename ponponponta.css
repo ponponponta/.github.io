@@ -1,5 +1,5 @@
 body{
-	font-family: cursive;
+	font-family: "Avenir Next";
 }
 li{
 	list-style: none;
@@ -22,6 +22,7 @@ li{
 .main{
 	padding: :100px 80px;
 }
+
 .section-title{
 	border-bottom: 2px solid #dee7ec;
   font-size: 28px;
