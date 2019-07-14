@@ -26,9 +26,20 @@ li{
 .section-title{
 	border-bottom: 2px solid #dee7ec;
   font-size: 50px;
+	font-family: cursive;
   <--padding-bottom: 15px;
   <--margin-bottom: 50px;
 }
+span t1{
+	color: green;
+}
+span t2{
+	color: teal;
+}
+span t3{
+	color: navy;
+}
+
 .footer{
 	background-color: #2f5167;
 	color:#fff;
