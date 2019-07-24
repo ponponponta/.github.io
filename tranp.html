@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Progate</title>
+  </head>
+  <body>
+    <h1 class="title">#include<stdio.h>
+    #include<string.h>
+
+    int main(){
+      char name[16];
+      char player[48];
+      char r[4]={'-','-','-','\0'};
+      char s[2]={' ','\0'};
+      int l[50];
+      double data[50];
+      int per=0;
+      int i,j,t=1;
+      int b,p,P,n=0,m;
+
+      for(m=0;m<50;m++){
+        data[m]=0;
+      }
+      for(m=0;m<16;m++){
+        name[m]=0;
+      }
+      for(m=0;m<48;m++){
+        player[m]=0;
+      }
+      for(m=0;m<50;m++){
+        l[m]=0;
+      }
+
+      while(1){
+      printf("プレイヤー人数を入力してください: ");
+      scanf("%d",&P);
+      if(P>=2) break;
+      }
+
+      printf("プレイヤー名(3~15文字)を入力してください\n");
+      for(p=1;p<=P;p++){
+        scanf("%s",name);
+        for(m=0; name[m]!='\0'; ++m);
+        if(m<3||m>15){
+          printf("3~15文字で入力してください\n");
+          p--;
+          continue;
+        }
+
+        strcat(player,name);
+        strcat(player,r);
+        for(m=0; name[m]!='\0'; ++m);
+        l[p]=m;
+        if(m>n)
+          n=m;
+        else continue;
+          }
+
+
+
+      printf("利子(%%/ターン)を入力してください: ");
+      scanf("%d",&per);
+
+      while(1){
+
+        printf("\nターン%d 利子%d%%\n",t,per);
+        if(P==3) printf("プレイヤー番号は左から1,2,3\n");
+        else if(P==2) printf("プレイヤー番号は左から1,2\n");
+        else printf("プレイヤー番号は左から1,2,...,%d\n",P);
+        printf("次ターン(1) 借金(2) 返済(3) 利子変更(4) 終了(0)\n");
+        printf("\n---%s\n",player);
+
+        for(p=1;p<=P;p++){
+        if(l[p]==3){
+        printf("---%3.0f",data[p]);
+        }else if(l[p]==4){
+          printf("---%4.0f",data[p]);
+        }else if(l[p]==5){
+          printf("---%5.0f",data[p]);
+        }else if(l[p]==6){
+          printf("---%6.0f",data[p]);
+        }else if(l[p]==7){
+          printf("---%7.0f",data[p]);
+        }else if(l[p]==8){
+          printf("---%8.0f",data[p]);
+        }else if(l[p]==9){
+          printf("---%9.0f",data[p]);
+        }else if(l[p]==10){
+          printf("---%10.0f",data[p]);
+        }else if(l[p]==11){
+          printf("---%11.0f",data[p]);
+        }else if(l[p]==12){
+          printf("---%12.0f",data[p]);
+        }else if(l[p]==13){
+          printf("---%13.0f",data[p]);
+        }else if(l[p]==14){
+          printf("---%14.0f",data[p]);
+        }else if(l[p]==15){
+          printf("---%15.0f",data[p]);
+        }
+        }
+
+        printf("---\n==>");
+        scanf("%d",&i);
+
+        if(i==1){
+          t++;
+          for(p=1;p<=P;p++){
+    	data[p]+=data[p]*(double)per/100;
+          }
+          continue;
+        }
+
+        else if(i==2){
+          printf("借金する人の番号を入力してください: ");
+          scanf("%d",&p);
+          if(p>P) {
+    	printf("プレイヤー%dはいません\n",p);
+    	continue;
+          }else{
+          printf("借金額を入力してください: ");
+          scanf("%d",&b);
+          data[p]+=b;
+          b=0;
+          }
+    	}
+
+        else if(i==3){
+          printf("返済する人の番号を入力してください: ");
+          scanf("%d",&p);
+
+          if(data[p]==0){
+    	printf("借金をしていません\n");
+    	continue;
+          }
+          else{
+            printf("返済額を入力してください: ");
+    	scanf("%d",&b);
+        	data[p]-=b;
+    	b=0;
+          }
+        }
+
+        else if(i==4){
+          printf("利子(%%/ターン)を入力してください: ");
+          scanf("%d",&per);
+          continue;
+        }
+
+        else if(i==0){
+          break;
+        }
+
+      }
+
+      printf("終了します\n");
+
+      return 0;
+    }
+</h1>
+  </body>
+</html>
