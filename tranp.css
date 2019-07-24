@@ -1,0 +1,15 @@
+body{
+	font-family: "Avenir Next";
+}
+li{
+	list-style: none;
+}
+
+
+.title{
+	border-bottom: 2px solid #dee7ec;
+  font-size: 20px;
+	font-family: cursive;
+  <--padding-bottom: 15px;
+  <--margin-bottom: 50px;
+}
